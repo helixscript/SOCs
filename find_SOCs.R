@@ -9,7 +9,7 @@ args <- commandArgs(trailingOnly=TRUE)
 expSites <- args[1]
 refSites <- args[2]
 
-expSites <- 'data/lateSCID3.tsv'
+expSites <- 'data/lateSCID3.tsv.gz'
 refSites <- 'data/safetyPaperIntSites.tsv.gz'
 
 CPUs <- 60
