@@ -1,8 +1,8 @@
 
 
 prepIntSites <- function(x){
-  
-  if(! 'timePointMonths' %in% names(x)) x <- bind_cols(x, expandTimePoints(x$timePoint))
+
+  if(! 'timePointMonths' %in% names(x) | ! 'minTimePointDays' %in% names(x)) x <- bind_cols(x, expandTimePoints(x$timePoint))
   
   x <- subset(x, timePointDays >= minTimePointDays)
   if(nrow(x) == 0) stop('No sites remain after filtering on minTimePointDays')

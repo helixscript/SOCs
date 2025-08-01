@@ -9,17 +9,18 @@ args <- commandArgs(trailingOnly=TRUE)
 expSites <- args[1]
 refSites <- args[2]
 
-expSites <- 'p12418-13.tsv.gz'
-refSites <- 'safetyPaperIntSites.tsv.gz'
+expSites <- 'data/lateSCID3.tsv'
+refSites <- 'data/safetyPaperIntSites.tsv.gz'
 
-CPUs <- 30
-minSitesPerPatientChromosome <- 50
+CPUs <- 60
+minTimePointDays <- 180
+minSitesPerPatientChromosome <- 100
 window_width <- 10000
 window_step <- 5000
-n_draws <- 10000
+n_draws <- 5000
 min_eval <- 0.001
-min_SitesPerCluster <- 5
-chromosomeLengths <- 'hg38_chromosome_lengths.tsv'
+min_SitesPerCluster <- 10
+chromosomeLengths <- 'data/hg38_chromosome_lengths.tsv'
 outputFile <- 'output.tsv'
 
 refSites <- readr::read_tsv(refSites, show_col_types = FALSE) %>% as.data.table()
